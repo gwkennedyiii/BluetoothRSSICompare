@@ -30,6 +30,8 @@ private Context mContext;
 	@Override
 	public Object getItem(int position) {
 		int compare = 0;
+		if (btSignal == null || btSignal.getCount() < 4)
+			return 0;
 		switch (position) {
 			case (0): 
 				compare = ((BluetoothSignal)btSignal.getItem(0)).getRssi() -((BluetoothSignal)btSignal.getItem(1)).getRssi();

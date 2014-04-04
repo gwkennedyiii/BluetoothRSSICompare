@@ -68,7 +68,7 @@ public class BluetoothSearchActivity extends Activity {
 		// Initialize our signal adapter and hook it up to this activity
 		mSignalAdapter = new BluetoothSignalAdapter(this);
 		// Initialize our comparison signal adapter and hook it up to this activity
-		btSignalAdapter = new RssiCompareSignalAdapter(this);
+		btSignalAdapter = new RssiCompareSignalAdapter(this, mSignalAdapter);
 		setContentView(R.layout.activity_bluetooth_search);
 		ListView listView = (ListView)findViewById(R.id.list_bt_devices);
 		listView.setAdapter(mSignalAdapter);
